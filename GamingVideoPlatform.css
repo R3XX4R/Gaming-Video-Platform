@@ -1,0 +1,790 @@
+
+*{
+    box-sizing: border-box;
+    font-family:'Open Sans';
+    font-size: 100%;
+    
+}
+body{
+    background-size: cover;
+    
+    background-image: url(dota.png),
+    url(ds3.png), url(btfld.png), url(btfld.png),url(vlrnt.png),
+    url(nfs.png), url(tkn8.png), url(flt.png), url(cbpnk.png);
+    position: sticky;
+    overflow:hidden;
+    min-width: 200px;
+    min-height: 200px;
+
+    animation-name: backgroundImg;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+    
+}
+main{
+    
+    width: 75%;
+    height: 85%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: rgb(49, 49, 49);
+    border: 1px, solid, white;
+    border-radius: 10px;
+    display: flex;
+}
+
+.sideBar{
+    overflow-y:scroll;
+    scrollbar-width: 1rem;
+    width: 15%;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    background-color: rgb(49, 49, 49);
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(141, 141, 141);
+    border-radius: 10px; 
+}
+
+.mainSection{
+    width: 85%;
+    height: 100%;
+    overflow-y: scroll ;
+}
+
+.siteNameWithLogo{
+    color: white;
+    margin: 10%;
+    font-size: 115%;
+}
+
+.sidBarMenu{
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+    gap: 35px;
+    margin-top: 30%;
+    color: rgb(141, 141, 141);  
+}
+.sideBarString:hover{
+    font-weight: bold;
+    cursor: pointer;
+    color:rgb(255, 255, 255)
+}
+.sideBarString:active{
+    font-size: 95%;
+    cursor: pointer;
+    color:rgb(252, 239, 129);
+    box-shadow: 50% red;
+}
+.sideBarStringActive{
+    font-weight: bold;
+    cursor: pointer;
+    color:rgb(252, 239, 129);
+    
+}
+
+header{
+    display: flex;
+    gap:30%;
+}
+.searchBar{
+    margin-top: 2%;
+    margin-bottom: auto;
+    padding-left: 5%;
+    display: flex;
+    width: 70%;
+    
+}
+.searchInputBar{
+    margin-left: 2%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(34, 34, 34);
+    outline: none;
+    width: 100%;
+    height: 35%;
+    border-color: rgba(34, 34, 34, 0);
+    border-radius: 3px;
+}
+.searchInputBar:hover{
+    border-color: rgb(247, 247, 247);
+}
+.searchInputBar:focus{
+    border-color: rgb(252, 239, 129);
+}
+.profileSection{
+    margin-top: 2%;
+    display: flex;
+    gap: 5%;
+    color:white;
+    width:25% ;
+    margin-right: 5%;
+}
+.profileImg{
+    
+    width:40px;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.mainMenuPage{  /*Главная страница*/
+    visibility: visible;
+    position:relative;
+
+    animation-name: fadein;
+    animation-iteration-count: infinite;
+    
+    
+}
+.shortsMenuPage{
+    visibility: hidden;
+    position:absolute;
+
+    animation-name: fadein;
+    animation-play-state: running;
+    animation-iteration-count: infinite
+    
+}
+
+.pageSlidesScroll{
+    display: flex;
+    gap: 5%;
+    width: 100%;
+    
+}
+.pageSlide{
+   width: 800px;
+   height: 300px;
+   border: 3px solid rgb(255, 255, 255);
+   border-radius: 8px;
+   background-color: rgb(0, 53, 53);
+
+   position: relative;
+   z-index: 1;
+}
+.pageSlide:hover{
+    color: rgb(252, 239, 129);
+    cursor: pointer;
+    border-color: rgb(252, 239, 129);
+    
+}
+
+.authorInf{
+    top: 82%;
+    left: 3%;
+    width: 30%;
+    height: 15%;
+    margin: auto;
+    
+    
+    
+    display: flex;
+    gap: 5%;
+    
+    position: absolute;
+    z-index: 3;
+
+    padding-right: 5%;
+    
+}
+.authorInf:hover{
+    cursor: pointer;
+   
+    
+}
+.authorImg{
+    width: 40px;
+    height: 100%;
+    border: 1% solid;
+    border-color: white;
+    border-radius: 100%;
+}
+.authorName{
+    background-color: rgb(49, 49, 49);
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: auto;
+    padding: 7%;
+    
+    font-size: 80%;
+}
+.authorInf:hover .authorName{
+    color: rgb(252, 239, 129);
+    cursor: pointer;
+    border: 2px solid rgb(252, 239, 129);
+}
+
+.slideDisplayName{
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    text-align: center;
+    top: 105%;
+    left: 5%;
+    
+   
+   
+    color: white;
+    font-size: 100%;
+    font-weight: 1000;
+}
+.slideImg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+.slideImg:hover{
+    filter: blur(1px);
+}
+.slideVideoDuration{
+    position: absolute;
+    font-weight: 600;
+    z-index: 4;
+    color:white;
+    bottom: 84%;
+    left: 85%;
+    border: 1px solid white;
+    background-color:  rgb(49, 49, 49);
+    border-radius: 10px;
+    padding: 1%;
+
+}
+.viewCount{
+    position: absolute;
+    font-weight: 600;
+    z-index: 4;
+    color:white;
+    top: 83%;
+    left: 85%;
+    border: 1px solid white;
+    background-color:  rgb(49, 49, 49);
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.currentPageName{
+    font-size: 150%;
+    font-weight: bold;
+    color: white;
+    margin-left: 3%;
+}
+.mostWatchSection{
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    justify-content: space-evenly;
+    padding-bottom: 100px;
+    
+    
+    
+}
+.videoDiv{
+    width: 250px;
+    height: 300px;
+    position: relative;
+    z-index: 1;
+}
+.videoDiv:hover{
+    cursor: pointer;
+}
+.videoDivImg{
+    width: 100%;
+    height: 100%;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+.videoDivImg:hover{
+    border: 5px solid  rgb(252, 239, 129);
+    filter: blur(1px);
+}
+.videoDivName{
+    
+    color: white;
+    margin-top: 5%;
+    text-align: center;
+}
+.videoTimeDuration{
+    font-size: 70%;
+    padding: 5px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 4;
+    top:3%;
+    left: 75%;
+}
+.frontShortsSlide{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    flex-basis: 75%;
+    margin-left: auto;
+}
+
+.shortsContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+.shortsDescriptionSection{
+    background-color: rgb(34, 34, 34);
+    width: 90%;
+    border: 3px solid rgb(34, 34, 34);
+    border-radius: 3%;
+    margin-bottom: 5%;
+    padding-left: 3%;
+    color: white;
+}
+.shortsVideo{
+    width: 100%;
+    height: 100%;
+    border: solid 3px white;
+    border-radius: 20px;
+    object-fit: fill;
+}
+
+.controls {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    transition: opacity 0.4s;
+    right:1%;
+}
+.shortsContainer:hover .controls {
+    opacity: 1;
+}
+.controls button {
+    background: transparent;
+    color: #fff;
+    font-weight: bolder;
+    text-shadow: 2px 1px 2px #000;
+    border: none;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.timeline {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-right: 3px solid #ccc;
+    border-left: 3px solid #ccc;
+}
+.bar{
+    background: rgb(95, 95, 95);
+    height: 4px;
+    flex: 1;
+}
+.inner{
+    background: #ccc;
+    width: 0%;
+    height: 100%;
+}
+.fa {
+    font-size: 16px ;
+    
+}
+.fa:hover{
+    color: rgb(252, 239, 129);
+}
+.fa-play,.fa-pause{
+    position: absolute;
+    font-size: 400%;
+    left:48%;
+    bottom: 1400%;
+}
+.shortsVideoInfo{
+    width: 100%;
+    position: absolute;
+    top: 2%;
+    color: white;
+    display: flex;
+    
+    text-shadow: 5px 5px 5px black;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.shortsContainer:hover .shortsVideoInfo {
+    opacity: 1;
+}
+.shortsName{
+    margin-left: 2%;
+    font-size: 120%;
+}
+
+.shortsAuthorInfo{
+    margin-left: 41%;
+    display: flex;
+    background-color: rgb(49, 49, 49);
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 80%;
+    padding-left: 1%;
+    padding-right: 5%;
+    gap:5%;  
+}
+.shortsAuthorInfo:hover{
+    border: 3px solid rgb(252, 239, 129);;
+    cursor: pointer;
+}
+.shortsAuthorName{
+    margin: auto;
+}
+.shortsAuthorImg{
+    width:40px;
+    height: 40px;
+    border: 1px solid;
+    border-color: white;
+    border-radius: 100%;
+}
+.shortsPageMainSection{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.videosSideBar{
+    display: flex;
+    width: 22%;
+    flex-direction: column;
+    gap: 3%;
+}
+.videosSideBarDiv{
+    width: 90%;
+    
+    color: white;
+    font-size: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    
+    position: relative;
+}
+.videosSideBarDiv:hover .videosSideBarVideoImg{
+    filter: blur(1px);
+    border-color:rgb(252, 239, 129);
+}
+.videosSideBarDiv:hover{
+    cursor: pointer;
+}
+.videosSideBarVideoImg{
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.videosSideBarVideoName{
+    
+}
+.videosSideBarAuthorInfo{
+    width:50%;
+    display: flex;
+    margin: 2%;
+    position: absolute;
+}
+.videosSideBarAuthorName{
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color:  rgb(49, 49, 49);
+    margin-left: 5%;
+    padding: 4%;
+    
+}
+.videosSideBarAuthorInfo:hover{
+    border: 2px solid rgb(252, 239, 129);
+}
+.videosSideBarAuthorImg{
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    
+}
+
+@keyframes backgroundImg {
+    from {background-image: url(dota.png)}
+    24% {background-image: url(ds3.png)}
+    36% {background-image: url(btfld.png)}
+    48% {background-image: url(vlrnt.png)}
+    60% {background-image: url(nfs.png)}
+    72% {background-image: url(tkn8.png)}
+    84% {background-image: url(flt.png)}
+    96% {background-image: url(cbpnk.png)}
+}
+@media screen and (max-width: 1200px) {
+    
+    
+    .mainSection{
+        font-size: 70%;
+    }
+    .pageSlide{
+        width: 700px;
+        height: 250px;
+     }
+    .profileImg{
+        width:30px;
+        height: 100%;
+        border-radius: 100%;
+    }
+    
+    .videosSideBarDiv{
+       background-color: red;
+    }
+    .currentPageName{
+        color: rgb(255, 0, 0); 
+    }
+    .sidBarMenu{
+        display: flex;
+        flex-direction: column;
+        margin: 10%;
+        gap: 35px;
+        margin-top: 30%;
+        color: rgb(141, 141, 141);
+        font-size: 65%;
+    }
+    .siteNameWithLogo{
+        font-size: 65%;
+    }
+    .authorName{
+        font-size: 65%;
+    }
+    .authorImg{
+        width: 30px;
+        height: 30px;
+        border: 1% solid;
+        border-color: white;
+        border-radius: 100%;
+    }
+    .videoDiv{
+        width: 150px;
+        height: 200px;
+        
+    }
+    .videoTimeDuration{
+        left: 68%;
+    }
+    .videosSideBarAuthorImg{
+        width: 20px;
+        height: 20px;
+    }
+    .shortsContainer{
+        
+        width: 90%;
+        height: 70%;
+    }
+    .videosSideBar{
+        gap: 1%;
+    }
+    .videosSideBarDiv{
+         
+    }
+    .fa-play,.fa-pause{
+        bottom: 1200%;
+    }
+
+}  
+@media screen and (max-width: 998px) {
+   
+    .mainSection{
+        font-size: 55%;
+        
+    }
+    .pageSlide{
+        width: 600px;
+        height: 200px;
+     }
+    .profileImg{
+        width:20px;
+        height: 100%;
+        border-radius: 100%;
+    }
+    .videosSideBarDiv{
+       background-color: rgb(4, 0, 248);
+    }
+    .currentPageName{
+        color: rgb(0, 38, 255); 
+    }
+    .sidBarMenu{
+        display: flex;
+        flex-direction: column;
+        margin: 10%;
+        gap: 25px;
+        margin-top: 30%;
+        color: rgb(141, 141, 141);
+        font-size: 54%;
+    }
+    
+    .siteNameWithLogo{
+        font-size: 55%;
+    }
+    .authorName{
+        font-size: 55%;
+    }
+    .authorImg{
+        width: 20px;
+        height: 20px;
+        border: 1% solid;
+        border-color: white;
+        border-radius: 100%;
+    }
+    .videoDiv{
+        width: 125px;
+        height: 160px;
+        
+    }
+    .videoTimeDuration{
+        left: 68%;
+    }
+    .videosSideBarAuthorImg{
+        width: 20px;
+        height: 20px;
+    }
+    .shortsContainer{
+        width: 90%;
+        height: 55%;
+    }
+    .videosSideBarDiv{
+           
+    }
+    .fa-play,.fa-pause{
+        bottom: 1000%;
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    .mainSection{
+        font-size: 50%;
+    }
+    .pageSlide{
+        width: 500px;
+        height: 150px;
+     }
+    .profileImg{
+        width:20px;
+        height: 100%;
+        border-radius: 100%;
+    }
+    .videosSideBarDiv{
+       background-color: rgb(94, 255, 0);
+    }
+    .currentPageName{
+        color: rgb(0, 255, 21); 
+    }
+    .sidBarMenu{
+        display: flex;
+        flex-direction: column;
+        margin: 10%;
+        gap: 30px;
+        margin-top: 30%;
+        color: rgb(141, 141, 141);
+        font-size: 40%;
+    }
+    .siteNameWithLogo{
+        font-size: 40%;
+    }
+    .authorName{
+        font-size: 65%;
+    }
+    .authorImg{
+        width: 18px;
+        height: 18px;
+        border: 1% solid;
+        border-color: white;
+        border-radius: 100%;
+    }
+    .videoDiv{
+        width: 100px;
+        height: 130px;
+    }
+    .videoTimeDuration{
+        left: 68%;
+    }
+    .videosSideBarAuthorImg{
+        width: 18px;
+        height: 18px;
+    }
+    .shortsContainer{
+        width: 90%;
+        height: 45%;
+    }
+    .videosSideBarDiv{
+       
+    }
+    .fa-play,.fa-pause{
+        bottom: 800%;
+    }
+}  
+@media screen and (max-width: 576px) {
+    
+    .mainSection{
+        font-size: 30%;
+    }
+    .pageSlide{
+        width: 400px;
+        height: 100px;
+     }
+    .profileImg{
+        width:18px;
+        height: 100%;
+        border-radius: 100%;
+    }
+    .videosSideBarDiv{
+       background-color: rgb(238, 255, 0);
+    }
+    .currentPageName{
+        color: rgb(255, 238, 0); 
+    }
+    .sidBarMenu{
+        display: flex;
+        flex-direction: column;
+        margin: 10%;
+        gap: 30px;
+        margin-top: 30%;
+        color: rgb(141, 141, 141);
+        font-size: 30%;
+    }
+    .siteNameWithLogo{
+        font-size: 30%;
+    }
+    .authorName{
+        font-size: 55%;
+    }
+    .authorImg{
+        width: 16px;
+        height: 16px;
+        border: 1% solid;
+        border-color: white;
+        border-radius: 100%;
+    }
+    .videoDiv{
+        width: 70px;
+        height: 110px;
+    }
+    .videoTimeDuration{
+        left: 68%;
+    }
+    .videosSideBarAuthorImg{
+        width: 16px;
+        height: 16px;
+    }
+    .shortsContainer{
+        width: 90%;
+        height: 40%;
+    }
+    .videosSideBarDiv{
+         
+    }
+    .fa-play,.fa-pause{
+        bottom: 500%;
+    }
+}
